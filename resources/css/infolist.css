@@ -1,0 +1,160 @@
+/**
+ * Accelade Infolist - Custom Styles
+ *
+ * These styles complement Tailwind CSS for infolist components.
+ * Using standard CSS instead of @apply for runtime compatibility.
+ */
+
+/* Entry wrapper base styles */
+.accelade-entry {
+    position: relative;
+}
+
+/* Entry content styles */
+.accelade-entry-content {
+    min-width: 0;
+}
+
+/* Copyable entries */
+[data-copyable] {
+    cursor: pointer;
+    transition-property: color, background-color, border-color;
+    transition-duration: 150ms;
+}
+
+[data-copyable]:hover {
+    opacity: 0.8;
+}
+
+/* Badge entry animations */
+.accelade-badge {
+    transition: all 200ms;
+}
+
+.accelade-badge:hover {
+    transform: scale(1.05);
+}
+
+/* Image entry hover effects */
+.accelade-image-entry img {
+    transition: transform 200ms;
+}
+
+.accelade-image-entry:hover img {
+    transform: scale(1.05);
+}
+
+/* Color entry swatch */
+.accelade-color-swatch {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    transition: transform 150ms;
+}
+
+.accelade-color-swatch:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+/* Key-value entry table */
+.accelade-key-value-table {
+    width: 100%;
+}
+
+.accelade-key-value-table dt {
+    font-weight: 500;
+    color: #6b7280;
+}
+
+.accelade-key-value-table dd {
+    color: #111827;
+}
+
+/* Repeatable entry cards */
+.accelade-repeatable-item {
+    transition: box-shadow 200ms;
+}
+
+.accelade-repeatable-item:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+/* Code entry styles */
+.accelade-code-entry {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.875rem;
+}
+
+/* Loading state */
+.accelade-entry-loading {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    background-color: #f3f4f6;
+    border-radius: 0.25rem;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Empty state */
+.accelade-entry-empty {
+    color: #9ca3af;
+    font-style: italic;
+}
+
+/* Stacked images */
+.accelade-stacked-images {
+    display: flex;
+}
+
+.accelade-stacked-images > * + * {
+    margin-left: -0.75rem;
+}
+
+.accelade-stacked-images img {
+    box-shadow: 0 0 0 2px white;
+}
+
+/* Icon entry boolean colors */
+.accelade-icon-true {
+    color: #16a34a;
+}
+
+.accelade-icon-false {
+    color: #dc2626;
+}
+
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+    .accelade-key-value-table dt {
+        color: #9ca3af;
+    }
+
+    .accelade-key-value-table dd {
+        color: #ffffff;
+    }
+
+    .accelade-entry-loading {
+        background-color: #1f2937;
+    }
+
+    .accelade-entry-empty {
+        color: #6b7280;
+    }
+
+    .accelade-stacked-images img {
+        box-shadow: 0 0 0 2px #111827;
+    }
+
+    .accelade-icon-true {
+        color: #4ade80;
+    }
+
+    .accelade-icon-false {
+        color: #f87171;
+    }
+}
